@@ -1,0 +1,1 @@
+ C:\\Users\\uliya\\OneDrive\\Desktop\\projects\\hackflutter\\.dart_tool\\flutter_build\\6408d8451496132e2151549ad923d063\\native_assets.yaml: 

@@ -1,0 +1,4 @@
+#Mon Feb 26 16:59:30 PST 2024
+base.0=C\:\\Users\\uliya\\OneDrive\\Desktop\\projects\\hackflutter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
