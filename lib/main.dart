@@ -88,7 +88,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
             elevation: 2,   //add elevation
             //margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 150),
         //**********************
-            margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+            margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 10), //correct code
             child: ListTile(
               title: Text(
                 task.title,
@@ -100,7 +100,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-      //***** Activity 1 *****
+      //***** Activity 2 *****
                   IconButton(
                     icon: const Icon(Icons.delete),
                     onPressed: () => _deleteTask(task),
@@ -166,6 +166,7 @@ class AddTaskDialog extends StatelessWidget {
           },
           child: const Text('Cancel'),
         ),
+    //***** Activity 5 ***** 
         TextButton(
           onPressed: () {
             final newTask = Task(
@@ -176,6 +177,7 @@ class AddTaskDialog extends StatelessWidget {
           },
           child: const Text('Add'),
         ),
+    //**********************
       ],
     );
   }
