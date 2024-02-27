@@ -33,8 +33,10 @@ class TaskListScreen extends StatefulWidget {
 }
 
 class _TaskListScreenState extends State<TaskListScreen> {
+  //hardcode set tasks
   List<Task> tasks = [];
 
+  
   void _addTask() async {
     final newTask = await showDialog<Task>(
       context: context,
@@ -48,6 +50,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
     }
   }
 
+  
   void _deleteTask(Task task) {
     setState(() {
       tasks.remove(task);
@@ -121,6 +124,7 @@ class AddTaskDialog extends StatelessWidget {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          //link to documentation page -> maybe have them impelment this section
           TextField(
             controller: titleController,
             decoration: const InputDecoration(
