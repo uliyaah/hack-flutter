@@ -18,11 +18,7 @@ class TaskListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Task List App',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        fontFamily: 'Roboto',
-      ),
+      title:  'Task List App',
       home: const TaskListScreen(),
       debugShowCheckedModeBanner: false,
     );
@@ -63,7 +59,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Task List'),
-        backgroundColor: const Color.fromARGB(255, 222, 207, 248),
+        backgroundColor: const Color.fromARGB(255, 255, 220, 158),
         centerTitle: true,
       ),
       body: ListView.builder(
@@ -71,6 +67,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
         itemBuilder: (context, index) {
           final task = tasks[index];
           return Card(
+          
             elevation: 2,
             margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
             child: ListTile(
@@ -103,6 +100,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color.fromARGB(255, 255, 220, 158),
         onPressed: _addTask,
         child: const Icon(Icons.add),
       ),
