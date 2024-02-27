@@ -33,11 +33,11 @@ class TaskListScreen extends StatefulWidget {
 }
 
 class _TaskListScreenState extends State<TaskListScreen> {
-  //hardcode set tasks
   List<Task> tasks = [];
-
   
   void _addTask() async {
+    
+//***** Activity 4 *****
     final newTask = await showDialog<Task>(
       context: context,
       builder: (context) => AddTaskDialog(),
@@ -48,14 +48,27 @@ class _TaskListScreenState extends State<TaskListScreen> {
         tasks.add(newTask);
       });
     }
+//**********************
+
+//***** Activity 2 ***** (Transition from this to Activity 4)
+    // setState(() {
+    //     tasks.add(Task(
+    //       title: "Hello",
+    //       description: "Goodbye",
+    //     )
+      
+    //     );
+    //   });
+//**********************
   }
 
-  
+//***** Activity 3 *****
   void _deleteTask(Task task) {
     setState(() {
       tasks.remove(task);
     });
   }
+//**********************
 
   @override
   Widget build(BuildContext context) {
@@ -70,9 +83,12 @@ class _TaskListScreenState extends State<TaskListScreen> {
         itemBuilder: (context, index) {
           final task = tasks[index];
           return Card(
-          
-            elevation: 2,
-            margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+            color: const Color.fromARGB(255, 255, 254, 252),
+        //***** Activity 1 *****
+            elevation: 2,   //add elevation
+            //margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 150),
+        //**********************
+            margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
             child: ListTile(
               title: Text(
                 task.title,
@@ -84,10 +100,12 @@ class _TaskListScreenState extends State<TaskListScreen> {
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+      //***** Activity 1 *****
                   IconButton(
                     icon: const Icon(Icons.delete),
                     onPressed: () => _deleteTask(task),
                   ),
+      //**********************
                   Checkbox(
                     value: task.isComplete,
                     onChanged: (value) {
@@ -111,6 +129,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
   }
 }
 
+
 class AddTaskDialog extends StatelessWidget {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
@@ -124,7 +143,6 @@ class AddTaskDialog extends StatelessWidget {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          //link to documentation page -> maybe have them impelment this section
           TextField(
             controller: titleController,
             decoration: const InputDecoration(
