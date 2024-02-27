@@ -82,10 +82,6 @@ web
 3.2
 file:///C:/Users/uliya/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.3.0/
 file:///C:/Users/uliya/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.3.0/lib/
-hackflutter
-3.2
-file:///C:/Users/uliya/OneDrive/Desktop/projects/hackflutter/
-file:///C:/Users/uliya/OneDrive/Desktop/projects/hackflutter/lib/
 sky_engine
 3.2
 file:///C:/Users/uliya/flutter/bin/cache/pkg/sky_engine/
@@ -98,4 +94,8 @@ flutter_test
 3.2
 file:///C:/Users/uliya/flutter/packages/flutter_test/
 file:///C:/Users/uliya/flutter/packages/flutter_test/lib/
+hackflutter
+3.2
+file:///C:/Users/uliya/hackflutter/
+file:///C:/Users/uliya/hackflutter/lib/
 2
