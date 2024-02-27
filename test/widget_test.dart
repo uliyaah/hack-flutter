@@ -13,7 +13,7 @@ import 'package:hackflutter/main.dart';
 void main() {
   testWidgets('TaskListScreen UI Test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(TaskListApp());
+    await tester.pumpWidget(const TaskListApp());
 
     // Verify that our task list screen has a title.
     expect(find.text('Task List'), findsOneWidget);
@@ -29,8 +29,8 @@ void main() {
     expect(find.byType(AddTaskDialog), findsOneWidget);
 
     // Enter task details into the add task dialog and tap "Add".
-    await tester.enterText(find.byKey(Key('titleField')), 'New Task');
-    await tester.enterText(find.byKey(Key('descriptionField')), 'New Task Description');
+    await tester.enterText(find.byKey(const Key('titleField')), 'New Task');
+    await tester.enterText(find.byKey(const Key('descriptionField')), 'New Task Description');
     await tester.tap(find.text('Add'));
     await tester.pumpAndSettle();
 

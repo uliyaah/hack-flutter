@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(TaskListApp());
+  runApp(const TaskListApp());
 }
 
 class Task {
@@ -13,6 +13,8 @@ class Task {
 }
 
 class TaskListApp extends StatelessWidget {
+  const TaskListApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,13 +23,15 @@ class TaskListApp extends StatelessWidget {
         primaryColor: Colors.blue,
         fontFamily: 'Roboto',
       ),
-      home: TaskListScreen(),
+      home: const TaskListScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class TaskListScreen extends StatefulWidget {
+  const TaskListScreen({super.key});
+
   @override
   _TaskListScreenState createState() => _TaskListScreenState();
 }
@@ -58,8 +62,8 @@ class _TaskListScreenState extends State<TaskListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Task List'),
-        backgroundColor: Color.fromARGB(255, 222, 207, 248),
+        title: const Text('Task List'),
+        backgroundColor: const Color.fromARGB(255, 222, 207, 248),
         centerTitle: true,
       ),
       body: ListView.builder(
@@ -68,11 +72,11 @@ class _TaskListScreenState extends State<TaskListScreen> {
           final task = tasks[index];
           return Card(
             elevation: 2,
-            margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+            margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
             child: ListTile(
               title: Text(
                 task.title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -81,7 +85,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.delete),
+                    icon: const Icon(Icons.delete),
                     onPressed: () => _deleteTask(task),
                   ),
                   Checkbox(
@@ -100,7 +104,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addTask,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -110,23 +114,25 @@ class AddTaskDialog extends StatelessWidget {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
 
+  AddTaskDialog({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Add Task'),
+      title: const Text('Add Task'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           TextField(
             controller: titleController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Title',
               hintText: 'Enter task title',
             ),
           ),
           TextField(
             controller: descriptionController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Description',
               hintText: 'Enter task description',
             ),
@@ -138,7 +144,7 @@ class AddTaskDialog extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         TextButton(
           onPressed: () {
@@ -148,7 +154,7 @@ class AddTaskDialog extends StatelessWidget {
             );
             Navigator.pop(context, newTask);
           },
-          child: Text('Add'),
+          child: const Text('Add'),
         ),
       ],
     );
